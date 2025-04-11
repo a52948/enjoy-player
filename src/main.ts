@@ -12,5 +12,8 @@ const app = createApp(App)
 app.use(stores)
 app.use(router)
 app.use(i18n)
-
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 app.mount('#app')
