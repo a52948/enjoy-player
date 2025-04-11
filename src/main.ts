@@ -6,16 +6,11 @@ import i18n from './i18n'
 import './init/shortcuts'
 import '@/assets/iconfont/iconfont.css'
 import '@/assets/css/main.css'
-import cors from 'cors'; // 确保这一行存在
 
 const app = createApp(App)
 
 app.use(stores)
 app.use(router)
 app.use(i18n)
-app.use(cors());
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
+
 app.mount('#app')
